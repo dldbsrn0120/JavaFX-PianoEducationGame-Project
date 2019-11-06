@@ -11,30 +11,9 @@
    <center>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #669999;">
+          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #669999;">
                <children>
-                  <GridPane fx:id="gridpane" prefHeight="240.0" prefWidth="500.0">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <HBox fx:id="freefall_1" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" />
-                     </children>
-                  </GridPane>
+                  <HBox fx:id="freefall_1" prefHeight="240.0" prefWidth="500.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #c2c2a3;">
@@ -85,7 +64,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button fx:id="next" layoutX="418.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="82.0" style="-fx-background-color: #CCCCCC;" text="Next">
+            <Button fx:id="gotonext" layoutX="418.0" mnemonicParsing="false" onAction="#gotonextbutton_clicked" prefHeight="101.0" prefWidth="82.0" style="-fx-background-color: #CCCCCC;" text="Next">
                <font>
                   <Font size="21.0" />
                </font>

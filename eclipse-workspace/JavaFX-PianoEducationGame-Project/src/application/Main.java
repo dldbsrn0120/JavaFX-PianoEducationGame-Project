@@ -9,8 +9,9 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-	MainController mainController;
-	
+	private MainController mainController;
+	private NextController nextController;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -19,8 +20,9 @@ public class Main extends Application {
 			BorderPane root = (BorderPane) loader.load();
 			
 			mainController = new MainController();
+			nextController = new NextController();
 			
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,500,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();

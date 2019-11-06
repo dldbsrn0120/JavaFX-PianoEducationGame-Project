@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NextController">
+   <center>
+      <AnchorPane fx:id="nextfirstpane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #66BBBB;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="nextpagelabel" layoutX="303.0" layoutY="42.0" text="NewScene">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="firstevent" layoutX="115.0" layoutY="491.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="120.0" text="Button" />
+            <Button layoutX="331.0" layoutY="491.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="120.0" text="Button" />
+            <Button layoutX="478.0" layoutY="491.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="120.0" text="Button" />
+            <Circle fx:id="sound1" fill="DODGERBLUE" layoutX="70.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound3" fill="DODGERBLUE" layoutX="130.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound13" fill="DODGERBLUE" layoutX="490.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound12" fill="DODGERBLUE" layoutX="430.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound10" fill="DODGERBLUE" layoutX="370.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound8" fill="DODGERBLUE" layoutX="310.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound6" fill="DODGERBLUE" layoutX="250.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound5" fill="DODGERBLUE" layoutX="190.0" layoutY="400.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound2" fill="DODGERBLUE" layoutX="100.0" layoutY="300.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound4" fill="DODGERBLUE" layoutX="160.0" layoutY="300.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound7" fill="DODGERBLUE" layoutX="280.0" layoutY="300.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound11" fill="DODGERBLUE" layoutX="400.0" layoutY="300.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="sound9" fill="DODGERBLUE" layoutX="340.0" layoutY="300.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

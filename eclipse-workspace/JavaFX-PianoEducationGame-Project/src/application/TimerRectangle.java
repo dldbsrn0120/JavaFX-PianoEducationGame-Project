@@ -7,9 +7,19 @@ import javafx.scene.shape.Rectangle;
 public class TimerRectangle extends Rectangle {
 
 	private double time;
+	private double maxtime;
 	private AnimationTimer timer;
+	private boolean isUserClicked;
 	
 	public TimerRectangle(int width, int height, Color color) {
+		super(width, height, color);
+		this.setTranslateX(0);
+		this.setTranslateY(0);
+		time = 0;
+		maxtime = 100;
+	}
+	
+	public TimerRectangle(int width, int height, Color color, int idx) {
 		super(width, height, color);
 		time = 0;
 	}
@@ -36,8 +46,9 @@ public class TimerRectangle extends Rectangle {
 		time += 1;
 		if(time % 10 == 0)
 			System.out.println(time);
-		if(time > 50) {
+		if(time > maxtime) {
 			stopTimer();
+			this.setVisible(false);
 			return;
 		}
 	}
@@ -49,6 +60,14 @@ public class TimerRectangle extends Rectangle {
 	
 	public void moveDown() {
 		this.setTranslateY(this.getTranslateY() + 1);
+	}
+	
+	public double getMaxTime() {
+		return this.maxtime;
+	}
+	
+	public void setMaxTime(double maxtime) {
+		this.maxtime = maxtime;
 	}
 
 }
