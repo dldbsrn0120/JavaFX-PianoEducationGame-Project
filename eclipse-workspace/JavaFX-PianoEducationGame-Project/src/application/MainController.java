@@ -22,7 +22,6 @@ public class MainController{
 
 	private MainModel mainModel;
 	private MainNoteModel mainNoteModel;
-	private NextController nextController;
 	
 	private Stage linkstage;
 	private Parent nextParent;
@@ -36,6 +35,13 @@ public class MainController{
 	public MainController() {
 		mainModel = new MainModel();
 		mainNoteModel = new MainNoteModel();
+		System.out.println("constructor1");	// debug
+	}
+	
+	public MainController(MainModel mainModel, MainNoteModel mainNoteModel) {
+		this.mainModel = mainModel;
+		this.mainNoteModel = mainNoteModel;
+		System.out.println("constructor2");	// debug
 	}
 	
 	@FXML
@@ -84,18 +90,7 @@ public class MainController{
 	
 	@FXML
 	private void btn_7_clicked() {
-		TimerRectangle r = mainNoteModel.getTimerRectangle();
-		
-		if(r == null) {
-			return;
-		}
-		else {
-			xmoving += 25;
-			if(xmoving > 1000) xmoving = 0;
-			r.setTranslateX(xmoving);
-			anchorpane.getChildren().add(r);
-			FallNodes(r);
-		}
+
 	}
 	
 	@FXML
@@ -105,9 +100,6 @@ public class MainController{
 			loader.setLocation(getClass().getResource("NextView.fxml"));
 			nextParent = loader.load();
 			
-			//if(nextController == null)
-			nextController = new NextController();
-			
 			Scene scene = new Scene(nextParent,600,800);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			linkstage = (Stage) (((Node)e.getSource()).getScene().getWindow()); // 장면전환
@@ -116,9 +108,5 @@ public class MainController{
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
-	}
-
-	public void FallNodes(TimerRectangle r) {
-		r.FallNodes();
 	}
 }

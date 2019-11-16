@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="683.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameSceneController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#startSample" text="GAME" />
+            <Button mnemonicParsing="false" onAction="#exitProgram" text="EXIT" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5, 0.5" orientation="VERTICAL" prefHeight="640.0" prefWidth="880.0" BorderPane.alignment="CENTER">
+        <items>
+            <AnchorPane fx:id="fallnotepane" prefHeight="360.0" prefWidth="1320.0" style="-fx-background-color: #333333;">
+               <children>
+                  <Line endX="1320.0" layoutY="280.0" stroke="RED" strokeWidth="3.0" />
+               </children></AnchorPane>
+          <AnchorPane fx:id="judgepane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="20.0" prefWidth="1320.0" style="-fx-background-color: #AAAAAA;" />
+          <AnchorPane fx:id="virtualKeyboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="240.0" prefWidth="1320.0" style="-fx-background-color: #DDDDDD;" />
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

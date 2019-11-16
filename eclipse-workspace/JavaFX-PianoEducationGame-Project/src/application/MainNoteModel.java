@@ -13,7 +13,19 @@ public class MainNoteModel {
 	}
 	
 	public void createNewRectangle() {
-		TimerRectangle r = new TimerRectangle(25,25,Color.GREEN);
+		TimerRectangle r = new TimerRectangle(10,20,Color.GREEN);
+		
+		rectangleList.add(r);
+	}
+	
+	public void createNewRectangle(int idx) {
+		TimerRectangle r = new TimerRectangle(10,20,Color.GREEN,idx);
+		
+		rectangleList.add(r);
+	}
+	
+	public void createNewRectangle(int idx, int x1, int x, int y) {
+		TimerRectangle r = new TimerRectangle(15, 30, Color.HOTPINK ,idx, x1, x, y);
 		
 		rectangleList.add(r);
 	}
@@ -33,7 +45,12 @@ public class MainNoteModel {
 		}
 	}
 	
+	public void setTimerRectangle(TimerRectangle r) {
+		rectangleList.add(r);
+	}
+	
 	public void initializeTimerRectangleList() {
 		//rectangleList.removeAll(ArrayList<Rectangle>);
+		
 	}
 }

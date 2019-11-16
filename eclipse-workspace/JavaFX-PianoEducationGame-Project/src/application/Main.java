@@ -6,11 +6,14 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-
 public class Main extends Application {
 	
 	private MainController mainController;
 	private NextController nextController;
+	private GameSceneController gamescenecontroller;
+	
+	private MainModel mainModel;
+	private MainNoteModel mainNoteModel;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -19,8 +22,12 @@ public class Main extends Application {
 			loader.setLocation(getClass().getResource("MainView.fxml"));
 			BorderPane root = (BorderPane) loader.load();
 			
-			mainController = new MainController();
+			mainModel = new MainModel();
+			mainNoteModel = new MainNoteModel();
+			
+			mainController = new MainController(mainModel, mainNoteModel);
 			nextController = new NextController();
+			gamescenecontroller = new GameSceneController(mainNoteModel);
 			
 			Scene scene = new Scene(root,500,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

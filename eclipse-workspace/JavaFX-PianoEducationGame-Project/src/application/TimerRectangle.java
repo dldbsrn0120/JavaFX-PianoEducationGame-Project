@@ -1,73 +1,66 @@
 package application;
 
-import javafx.animation.AnimationTimer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class TimerRectangle extends Rectangle {
 
-	private double time;
-	private double maxtime;
-	private AnimationTimer timer;
-	private boolean isUserClicked;
+	private int index;
+	private int thisx, thisy;
+	private int x1;
 	
 	public TimerRectangle(int width, int height, Color color) {
 		super(width, height, color);
 		this.setTranslateX(0);
 		this.setTranslateY(0);
-		time = 0;
-		maxtime = 100;
 	}
 	
 	public TimerRectangle(int width, int height, Color color, int idx) {
 		super(width, height, color);
-		time = 0;
+		index = idx;
 	}
 	
-	public void FallNodes() {
-		try {
-			timer = new AnimationTimer() {
-			@Override
-			public void handle(long now) {
-				// TODO Auto-generated method stub
-				update();
-			}
-		};
-		timer.start();
-		
-		} catch(NullPointerException e) {
-			
-		}
+	public TimerRectangle(int width, int height, Color color, int idx, int x1, int X, int Y) {
+		super(width, height, color);
+		index = idx;
+		setX1(x1);
+		setThisx(X);
+		setThisy(Y);
 	}
 	
-	public void update() {
-		moveDown();
-		
-		time += 1;
-		if(time % 10 == 0)
-			System.out.println(time);
-		if(time > maxtime) {
-			stopTimer();
-			this.setVisible(false);
-			return;
-		}
-	}
-	
-	public void stopTimer() {
-		timer.stop();
-		time = 0;
+	public void FallRectangle() {
+		this.moveDown();
 	}
 	
 	public void moveDown() {
 		this.setTranslateY(this.getTranslateY() + 1);
 	}
-	
-	public double getMaxTime() {
-		return this.maxtime;
-	}
-	
-	public void setMaxTime(double maxtime) {
-		this.maxtime = maxtime;
+
+	public int getThisx() {
+		return thisx;
 	}
 
+	public void setThisx(int thisx) {
+		this.thisx = thisx;
+	}
+
+	public int getThisy() {
+		return thisy;
+	}
+
+	public void setThisy(int thisy) {
+		this.thisy = thisy;
+	}
+
+	public int getX1() {
+		return x1;
+	}
+
+	public void setX1(int x1) {
+		this.x1 = x1;
+	}
+	
+	public void setColor(Color color) {
+		super.setFill(color);
+	}
 }

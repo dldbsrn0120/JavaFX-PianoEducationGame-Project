@@ -1,19 +1,28 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 public class NextController implements Initializable {
 	
-	private MidiModel midiModel;
+	private Stage linkstage;
+	
+	private Parent nextParent;
 	
 	@FXML private AnchorPane nextfirstpane;
 	
@@ -33,7 +42,8 @@ public class NextController implements Initializable {
 	@FXML private Circle sound13;
 	
 	public NextController() {
-		midiModel = new MidiModel();
+
+		System.out.println("constructor1");	// debug
 	}
 	
 	@Override
@@ -99,5 +109,37 @@ public class NextController implements Initializable {
 		    	sound13.setFill(Color.DARKRED);
 		    } 
 		});
+	}
+	
+	@FXML
+	private void showMidiDevicesInfo() {
+		
+	}
+	
+	@FXML
+	private void deviceConnectTest() {
+		
+	}
+	
+	@FXML
+	private void playbackEvent() {
+		
+	}
+	
+	@FXML
+	private void gotonextbutton_clicked(ActionEvent e) throws IOException {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("GameScene.fxml"));
+			nextParent = loader.load();
+			
+			Scene scene = new Scene(nextParent,1320,640);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			linkstage = (Stage) (((Node)e.getSource()).getScene().getWindow()); // 장면전환
+			linkstage.setScene(scene);
+			linkstage.show();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 }
